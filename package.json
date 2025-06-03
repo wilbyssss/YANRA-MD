@@ -1,12 +1,12 @@
 {
-  "name": "ALI-MD",
-  "version": "3.0.0",
-  "description": "A WhatsApp Bot Created By ALI",
+  "name": "YANRA-MD",
+  "version": "3.1.0",
+  "description": "A WhatsApp Bot Created By YANRA",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name ALI-MD",
-    "stop": "pm2 stop ALI-MD",
-    "restart": "pm2 restart ALI-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name YANRA-MD",
+    "stop": "pm2 stop YANRA-MD",
+    "restart": "pm2 restart YANRA-MD"
   },
   "dependencies": {
     "@bochilteam/scraper": "3.0.0",
