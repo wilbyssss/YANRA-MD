@@ -96,7 +96,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
-        const text = `*${reactionEmoji} 𝐏๏፝֟ƞ̽g ${responseTime.toFixed(2)} 𝐌ʂ*`;
+        const text = `*${reactionEmoji} P✺ℵ❡ ${responseTime.toFixed(2)} Պṧ*`;
 
         await conn.sendMessage(from, {
             text,
@@ -105,8 +105,8 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 forwardingScore: 999,
                 isForwarded: false,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363318387454868@newsletter',
-                    newsletterName: "𝐀ɭι̇ι̇ 𝐌Ɗ 𝐏๏፝֟ƞ̽g  ⃪🤖͎᪳᪳𝆺𝅥",
+                    newsletterJid: '120363321386877609@newsletter',
+                    newsletterName: "Yᾰ︎ℵԻᾰ︎ Պᖱ P✺ℵ❡  ⃪🤖͎᪳᪳𝆺𝅥",
                     serverMessageId: 143
                 }
             }
@@ -130,10 +130,10 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         const startTime = Date.now()
-        const message = await conn.sendMessage(from, { text: '\`ALI PINGING 🚀\`' })
+        const message = await conn.sendMessage(from, { text: '\`Yᾰ︎ℵԻᾰ︎ P!︎ℵ❡!︎ℵ❡ 🚀\`' })
         const endTime = Date.now()
         const ping = endTime - startTime
-        await conn.sendMessage(from, { text: `*ALI PONGED ! : ${ping}ms ⚡*` }, { quoted: message })
+        await conn.sendMessage(from, { text: `*Yᾰ︎ℵԻᾰ︎ P✺ℵ❡ḙᖱ ! : ${ping}Պṧ ⚡*` }, { quoted: message })
     } catch (e) {
         console.log(e)
         reply(`${e}`)
