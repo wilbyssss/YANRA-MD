@@ -1,60 +1,61 @@
-const { cmd } = require("../command"); const yts = require("yt-search"); const axios = require("axios");
+/*
+_  ______   _____ _____ _____ _   _
+| |/ / ___| |_   _| ____/___ | | | |
+| ' / |  _    | | |  _|| |   | |_| |
+| . \ |_| |   | | | |__| |___|  _  |
+|_|\_\____|   |_| |_____\____|_| |_|
 
-cmd({ pattern: "ong", alias: ["musiic", "mp04"], desc: "Search and download a song from YouTube", category: "media", react: "🎵", filename: __filename }, async (conn, mek, m, { from, args, q, reply }) => { try { if (!q) return reply("Please provide a song name or YouTube link to download.");
+ANYWAY, YOU MUST GIVE CREDIT TO MY CODE WHEN COPY IT
+CONTACT ME HERE +237656520674
+YT: KermHackTools
+Github: Kgtech-cmr
+*/
 
-let videoUrl = q;
-    if (!q.includes("youtube.com") && !q.includes("youtu.be")) {
-        reply("*🎐 𝐀ɭīī 𝐌Ɗ 𝐒𝐄𝐀𝐑𝐂𝐇𝐈𝐍𝐆 𝐒𝐎𝐍𝐆...*");
-        const searchResults = await yts(q);
-        if (!searchResults.videos.length) return reply("No results found for your query.");
-        videoUrl = searchResults.videos[0].url;
+const { cmd } = require('../command');
+const yts = require('yt-search');
+const axios = require('axios');
+
+cmd({
+  pattern: 'song',
+  alias: ['audio'],
+  desc: 'Search and download audio from YouTube',
+  category: 'music',
+  react: '🎧',
+  filename: __filename
+}, async (client, message, m, { from, args, q, reply }) => {
+  try {
+    if (!q) return reply('*𝐏ℓєα𝐬֟፝є 𝐏ʀ๏νιɖє A S๏ƞ͛g 𝐍αмє..*');
+
+    let videoUrl = q;
+
+    // Si ce n’est pas une URL YouTube, on cherche la vidéo avec yts
+    if (!q.includes('youtube.com') && !q.includes('youtu.be')) {
+      reply('_🎐 Your song is downloading..._');
+      const search = await yts(q);
+      if (!search.videos.length) return reply('No results found for your query.');
+      videoUrl = search.videos[0].url;
     }
-    
-    const apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp4?url=${videoUrl}`;
+
+    const apiUrl = 'https://apis.davidcyriltech.my.id/youtube/mp3?url=' + videoUrl;
     const response = await axios.get(apiUrl);
-    if (!response.data || !response.data.status || !response.data.result.url) {
-        return reply("Failed to fetch the video. Try again later.");
-    }
-    
-    await conn.sendMessage(from, {
-        video: { url: response.data.result.url },
-        caption: `🎶 *Title:* ${response.data.result.title}\n🔗 *Link:* ${videoUrl}`
-    }, { quoted: mek });
-    
-} catch (e) {
-    console.error("Error in song command:", e);
-    reply("An error occurred while processing your request.");
-}
 
+    if (
+      !response.data ||
+      !response.data.result ||
+      !response.data.result.downloadUrl
+    ) {
+      return reply('Failed to fetch the audio. Try again later.');
+    }
+
+    await client.sendMessage(from, {
+      audio: { url: response.data.result.downloadUrl },
+      mimetype: 'audio/mpeg',
+      ptt: false,
+      caption: `🎵 *Title:* ${response.data.result.title}\n🔗 *Link:* ${videoUrl}`
+    }, { quoted: message });
+
+  } catch (err) {
+    console.error('Error in play command:', err);
+    reply('An error occurred while processing your request.');
+  }
 });
-
-cmd({ pattern: "music", alias: ["play2", "song2"], desc: "Search and download audio from YouTube", category: "media", react: "🎧", filename: __filename }, async (conn, mek, m, { from, args, q, reply }) => { try { if (!q) return reply("*𝐏ℓєα𝐬֟፝є 𝐏ʀ๏νιɖє 𝐀 𝐒๏ƞ͛g 𝐍αмє..*");
-
-let videoUrl = q;
-    if (!q.includes("youtube.com") && !q.includes("youtu.be")) {
-        reply("*🎐 𝐀ɭīī 𝐌Ɗ 𝐒𝐄𝐀𝐑𝐂𝐇𝐈𝐍𝐆 𝐒𝐎𝐍𝐆...*");
-        const searchResults = await yts(q);
-        if (!searchResults.videos.length) return reply("No results found for your query.");
-        videoUrl = searchResults.videos[0].url;
-    }
-    
-    const apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${videoUrl}`;
-    const response = await axios.get(apiUrl);
-    if (!response.data || !response.data.success || !response.data.result.downloadUrl) {
-        return reply("Failed to fetch the audio. Try again later.");
-    }
-    
-    await conn.sendMessage(from, {
-        audio: { url: response.data.result.downloadUrl },
-        mimetype: "audio/mpeg",
-        ptt: false,
-        caption: `🎵 *Title:* ${response.data.result.title}\n🔗 *Link:* ${videoUrl}`
-    }, { quoted: mek });
-    
-} catch (e) {
-    console.error("Error in play command:", e);
-    reply("An error occurred while processing your request.");
-}
-
-});
-
