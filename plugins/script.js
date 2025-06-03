@@ -144,7 +144,7 @@ ${readMore}
 
         // Send the audio file with context info
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/RN237/DATABASE/raw/refs/heads/main/audios/kermalive.m4a' },
+            audio: { url: 'https://raw.githubusercontent.com/Giffareno237/KERM-MD-V1/refs/heads/main/DATABASE/Kermalive.m4a' },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: { 
