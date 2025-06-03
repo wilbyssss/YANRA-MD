@@ -344,7 +344,7 @@ await conn.sendMessage(from,{image:{url: config.ALIVE_IMG},caption:madeMenu,
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363318387454868@newsletter',
+      newsletterJid: '120363321386877609@newsletter',
       newsletterName: config.BOT_NAME,
       serverMessageId: 999
     }
@@ -357,7 +357,7 @@ await conn.sendMessage(from,{video:{url: config.ALIVE_IMG},caption:madeMenu,
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363318387454868@newsletter',
+      newsletterJid: '120363321386877609@newsletter',
       newsletterName: config.BOT_NAME,
       serverMessageId: 999
     }
