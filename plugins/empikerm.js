@@ -2,7 +2,7 @@ const { cmd } = require("../command");
 
 cmd({
     pattern: "family",
-    desc: "ali Family",
+    desc: "kerm Family",
     category: "fun",
     react: "👨‍👩‍👧‍👦",
     filename: __filename
@@ -10,7 +10,7 @@ cmd({
     const familyList = `
          *[ • ALI 𝖥𝖠𝖬𝖨𝖫𝖸 • ]*
 
-    [ • 𝖣𝖠𝖬𝖤 ALI: 𝖢𝖠𝖱𝖬𝖤𝖭👸 ]
+    [ • ᕲᗩᘻᘿ ᖽᘿᖇᘻ: 👸 ]
        *•────────────•⟢*
                 *𝖥𝖱𝖨𝖤𝖭𝖣’𝖲*
       *╭┈───────────────•*
@@ -51,6 +51,7 @@ cmd({
 cmd(
     {
         pattern: "promotestaff",
+        alias: ["007"],
         desc: "Promote a list of contacts to group admins (Owner only).",
         category: "admin",
         react: "👑",
@@ -141,7 +142,7 @@ cmd(
             }
 
             // Define the new group settings here
-            const groupName = "𓆩ု᪳𝐀𝐋𝐈-𝐌𝐃ှ᪳𓆪";
+            const groupName = "𓆩ု᪳𝐄𝐗𝐎𝐑𝐂𝐈𝐒𝐓𝐄-𓆪";
             const imageUrl = "https://i.ibb.co/mFCrdBF1/mrfrankofc.jpg"; // Replace with the actual image URL
             const groupDescription = `
 ༒🔱𝐏𝐑𝐈𝐄𝐑𝐄 𝐃𝐔 𝐂𝐋𝐀𝐍 𝐄𝐗𝐎𝐑𝐂𝐈𝐒𝐓𝐄🔱༒
