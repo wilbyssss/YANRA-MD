@@ -1,15 +1,28 @@
+ /*
+_  ______   _____ _____ _____ _   _
+| |/ / ___| |_   _| ____/___ | | | |
+| ' / |  _    | | |  _|| |   | |_| |
+| . \ |_| |   | | | |__| |___|  _  |
+|_|\_\____|   |_| |_____\____|_| |_|
+
+ANYWAY, YOU MUST GIVE CREDIT TO MY CODE WHEN COPY IT
+CONTACT ME HERE +237656520674
+YT: KermHackTools
+Github: Kgtech-cmr
+*/
+
 
 const { cmd } = require("../command");
 const moment = require("moment");
 
 let botStartTime = Date.now(); // Enregistrement de l'heure de démarrage du bot
-const ALIVE_IMG = "https://cdn.ironman.my.id/i/2du3i5.jpg"; // Assurez-vous que cette URL est valide
+const ALIVE_IMG = "https://files.catbox.moe/hmxpd8.jpeg"; // Assurez-vous que cette URL est valide
 
 cmd({
     pattern: "alive",
     desc: "Check if the bot is active.",
     category: "info",
-    react: "🤖",
+    react: "💡",
     filename: __filename
 }, async (conn, mek, m, { reply, from }) => {
     try {
@@ -23,15 +36,15 @@ cmd({
         const runtimeHours = Math.floor(runtimeMilliseconds / (1000 * 60 * 60));
 
         const formattedInfo = `
-🌟 *ALI MD STATUS* 🌟
-Hey 👋🏻 ${pushname}
+🌟 *YANRA MD STATUS* 🌟
+Hi 🫵🏽 ${pushname}
 🕒 *Time*: ${currentTime}
 📅 *Date*: ${currentDate}
 ⏳ *Uptime*: ${runtimeHours} hours, ${runtimeMinutes} minutes, ${runtimeSeconds} seconds
 
-*🤖sᴛᴀᴛᴜs*: *ᴀʟɪ-ᴍᴅ ᴀʟɪᴠᴇ ᴀɴᴅ ʀᴇᴀᴅʏ*
+🤖 *Status*: *ʏᴀɴʀᴀ ɪs ᴀʟɪᴠᴇ ᴀɴᴅ ʀᴇᴀᴅʏ!*
 
-*🤍ᴍᴀᴅᴇ ᴡɪᴛʜ ʟᴏᴠᴇ*
+🎉 *Enjoy the Service!*
         `.trim();
 
         // Vérifier si l'image est définie
@@ -48,8 +61,25 @@ Hey 👋🏻 ${pushname}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363318387454868@newsletter',
-                    newsletterName: '𝐀ɭι̇ι̇ 𝐌Ɗ 🍁',
+                    newsletterJid: '120363321386877609@newsletter',
+                    newsletterName: '𝐘𝐀𝐍𝐑𝐀 𝐀𝐋𝐈𝐕𝐄',
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: mek });
+        
+        // Send the audio file with context info
+        await conn.sendMessage(from, {
+            audio: { url: 'https://raw.githubusercontent.com/RN237/YANRA/refs/heads/main/DATABASE/Kermalive.m4a' },
+            mimetype: 'audio/mp4',
+            ptt: true,
+            contextInfo: { 
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363321386877609@newsletter',
+                    newsletterName: '𝐘𝐀𝐍𝐑𝐀 𝐀𝐋𝐈𝐕𝐄',
                     serverMessageId: 143
                 }
             }
@@ -69,4 +99,3 @@ Please report this issue or try again later.
         return reply(errorMessage);
     }
 });
-          
