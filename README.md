@@ -162,7 +162,7 @@
 ## 🗃️ PROJECT ARCHITECTS
 <div align="center">
   <a href="https://github.com/RN237">
-    <img src="https://github-readme-stats.vercel.app/api?username=JawadYT36&show_icons=true&theme=dark&border_color=00ffff&title_color=00ffff&icon_color=00ffff" width="400"/>
+    <img src="https://github-readme-stats.vercel.app/api?username=RN237&show_icons=true&theme=dark&border_color=00ffff&title_color=00ffff&icon_color=00ffff" width="400"/>
   </a>
 </div>
 
@@ -174,7 +174,7 @@
 
 ```diff
 + Project Status: Active
-! Version: 5.0.0 Neon Edition
+! Version: 3.1.0 Neon Edition
 # License: APACHE
 ```
 
