@@ -60,19 +60,19 @@
   
 --- 
 > **PAIRING LINK (01)**
-  <a href='https://khanmd-pair.onrender.com/' target="_blank">
+  <a href='https://yan-ra-session-web.onrender.com/pair' target="_blank">
     <img src='https://img.shields.io/badge/PAIR_CODE_1-00FFFF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
   </a></br>
   
   <div style="height: 10px;"></div>
   
 > **PAIRiNG LINK (02)**
-  <a href='https://jawadmd-pair.onrender.com/pair' target="_blank">
+  <a href='https://yan-ra-session-web.onrender.com/' target="_blank">
     <img src='https://img.shields.io/badge/PAIR_CODE_2-FF00FF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
   </a>
 
   > **QR LINK (03)**
-  <a href='https://jawadmd-pair.onrender.com/qr' target="_blank">
+  <a href='https://yan-ra-session-web.onrender.com/qr' target="_blank">
     <img src='https://img.shields.io/badge/PAIR_CODE_3-FF0000?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
   </a>
   
