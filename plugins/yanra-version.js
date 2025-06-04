@@ -17,7 +17,7 @@ cmd({
 }) => {
   try {
     // Read local version data
-    const localVersionPath = path.join(__dirname, '../data/version.json');
+    const localVersionPath = path.join(__dirname, '../DATABASE/version.json');
     let localVersion = 'Unknown';
     let changelog = 'No changelog available.';
     if (fs.existsSync(localVersionPath)) {
@@ -27,7 +27,7 @@ cmd({
     }
 
     // Fetch latest version data from GitHub
-    const rawVersionUrl = 'https://raw.githubusercontent.com/itx-alii-raza/ALI-MD/main/data/version.json';
+    const rawVersionUrl = 'https://github.com/RN237/YANRA-MD/blob/main/DATABASE/version.json';
     let latestVersion = 'Unknown';
     let latestChangelog = 'No changelog available.';
     try {
@@ -53,12 +53,12 @@ cmd({
     const lastUpdate = fs.statSync(localVersionPath).mtime.toLocaleString();
 
     // GitHub stats
-    const githubRepo = 'https://github.com/itx-alii-raza/ALI-MD';
+    const githubRepo = 'https://github.com/RN237/YANRA-MD';
 
     // Check update status
-    let updateMessage = `*✅ ʏᴏᴜʀ ᴀʟɪ-ᴍᴅ ʙᴏᴛ ɪs ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ!*`;
+    let updateMessage = `*✅ ʏᴏᴜʀ ʏᴀɴʀᴀ-ᴍᴅ ʙᴏᴛ ɪs ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ!*`;
     if (localVersion !== latestVersion) {
-      updateMessage = `*😵‍💫 ʏᴏᴜʀ ᴀʟɪ-ᴍᴅ ʙᴏᴛ ɪs ᴏᴜᴛᴅᴀᴛᴇᴅ!*
+      updateMessage = `*😵‍💫 ʏᴏᴜʀ ʏᴀɴʀᴀ-ᴍᴅ ʙᴏᴛ ɪs ᴏᴜᴛᴅᴀᴛᴇᴅ!*
 🔹 *ᴄᴜʀʀᴇɴᴛ ᴠᴇʀsɪᴏɴ:* ${localVersion}
 🔹 *ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ:* ${latestVersion}
 
@@ -66,22 +66,22 @@ cmd({
     }
 
     const statusMessage = `🌟 *Good ${new Date().getHours() < 12 ? 'Morning' : 'Night'}, ${pushname}!* 🌟\n\n` +
-      `🤖 *ʙᴏᴛ ɴᴀᴍᴇ:* ᴀʟɪ-ᴍᴅ\n🔖 *ᴄᴜʀʀᴇɴᴛ ᴠᴇʀsɪᴏɴ:* ${localVersion}\n📢 *ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ:* ${latestVersion}\n📂 *ᴛᴏᴛᴀʟ ᴘʟᴜɢɪɴs:* ${pluginCount}\n🔢 *ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs:* ${totalCommands}\n\n` +
+      `🤖 *ʙᴏᴛ ɴᴀᴍᴇ:* ʏᴀɴʀᴀ-ᴍᴅ\n🔖 *ᴄᴜʀʀᴇɴᴛ ᴠᴇʀsɪᴏɴ:* ${localVersion}\n📢 *ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ:* ${latestVersion}\n📂 *ᴛᴏᴛᴀʟ ᴘʟᴜɢɪɴs:* ${pluginCount}\n🔢 *ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs:* ${totalCommands}\n\n` +
       `💾 *sʏsᴛᴇᴍ ɪɴғᴏ:*\n⏰ *ᴜᴘᴛɪᴍᴇ:* ${uptime}\n📟 *ʀᴀᴍ ᴜsᴀɢᴇ:* ${ramUsage}MB / ${totalRam}MB\n⚙️ *ʜᴏsᴛ ɴᴀᴍᴇ:* ${hostName}\n📅 *ʟᴀsᴛ ᴜᴘᴅᴀᴛᴇ:* ${lastUpdate}\n\n` +
       `📑 *ᴄʜᴀɴɢᴇʟᴏɢ:*\n${latestChangelog}\n\n` +
       `⭐ *ɢɪᴛʜᴜʙ ʀᴇᴘᴏ:* ${githubRepo}\n\n${updateMessage}\n\n👋🏻 *ʜᴇʏ! ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ ғᴏʀᴋ & sᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ!*`;
 
     // Send the status message with an image
     await conn.sendMessage(from, {
-      image: { url: 'https://cdn.ironman.my.id/i/2du3i5.jpg' },
+      image: { url: 'https://files.catbox.moe/hmxpd8.jpeg' },
       caption: statusMessage,
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363318387454868@newsletter',
-          newsletterName: '☇ 𝐀ɭι̇ι̇ 𝐌Ɗ 𝐒ʊ̊𝐏𝐏๏፝֟ɼʈ  ⃪🤖͎᪳᪳𝆺𝅥',
+          newsletterJid: '120363321386877609@newsletter',
+          newsletterName: '☇ Yᾰ︎ℵԻᾰ︎ 𝐌Ɗ 𝐒ʊ̊𝐏𝐏๏፝֟ɼʈ  ⃪🤖͎᪳᪳𝆺𝅥',
           serverMessageId: 143
         }
       }
