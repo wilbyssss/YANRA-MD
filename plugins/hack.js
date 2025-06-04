@@ -15,7 +15,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         if (!isOwner) return reply("*📛 ᴏɴʟʏ ᴛʜᴇ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.*");
 
         const steps = [
-            '💻 *ALI-MD-V1 HACK STARTING...* 💻',
+            '💻 *YANRA-M HACK STARTING...* 💻',
             '',
             '*Initializing hacking tools...* 🛠️',
             '*Connecting to remote servers...* 🌐',
@@ -37,7 +37,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             '*📡 Transmitting data...* 📤',
             '*🕵️‍♂️ Ensuring stealth...* 🤫',
             '*🔧 Finalizing operations...* 🏁',
-            '*🔧 ali Get Your All Data...* 🎁',
+            '*🔧 Yanra Get Your All Data...* 🎁',
             '',
             '⚠️ *Note:* All actions are for demonstration purposes only.',
             '⚠️ *Reminder:* Ethical hacking is the only way to ensure security.',
