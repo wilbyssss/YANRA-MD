@@ -3,12 +3,12 @@
     "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ Kɢ ᴛᴇᴄʜ",
     "logo": "https://files.catbox.moe/ibk9iq.jpeg",
     "keywords": ["bot"],
-    "documentation-link": "https://pair-session-kermv4-pair.onrender.com",
+    "documentation-link": "https://yan-ra-session-web.onrender.com/",
     "owner-verification":"bookmakerp@gmail.com",
   
     "env": {
       "SESSION_ID": {
-        "description": "Put your SESSION_ID here. Make sure it starts with YANRA-MD~, or get session id from here, https://pair-session-kermv4-pair.onrender.com",
+        "description": "Put your SESSION_ID here. Make sure it starts with YANRA-MD~, or get session id from here, https://yan-ra-session-web.onrender.com/",
         "value":"",
         "required": true
         
@@ -69,7 +69,7 @@
         
       },
       "BOT_NAME": {
-        "description": "write her your name.",
+        "description": "Put your bot name here(optional).",
         "required": true,
         "value": "✦『YANRA-MD』✦"
         
