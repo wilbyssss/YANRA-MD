@@ -41,7 +41,7 @@ let madeMenu = `*╭══〘〘 ${config.BOT_NAME} 〙〙*
 *┃❍* *ᴍᴏᴅᴇ* : *${config.MODE}*
 *┃❍* *ᴘʀᴇғɪx* : *${config.PREFIX}*
 *┃❍* *ʀᴀᴍ ᴜsᴇ* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-*┃❍* *ɴᴀᴍᴇ ʙᴏᴛ* : *❖『𝗞𝗘𝗥𝗠 𝗠𝗗 𝗩1』❖*
+*┃❍* *ɴᴀᴍᴇ ʙᴏᴛ* : *❖『𝐘𝐀𝐍𝐑𝐀 𝗠𝗗』❖*
 *┃❍* *ᴄʀᴇᴀᴛᴏʀ* : *Kɢ Tᴇᴄʜ*
 *┃❍* *ᴀʟᴡᴀʏs ᴏɴʟɪɴᴇ* : *${config.ALWAYS_ONLINE}*
 *┃❍* *ᴠᴇʀsɪᴏɴs* : *4.2.1*
@@ -263,14 +263,14 @@ let madeMenu = `*╭══〘〘 ${config.BOT_NAME} 〙〙*
 *┕─────────────❒*
 `
 
-await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu,
+await conn.sendMessage(from,{image:{url:config.MENU_IMAGE_URL},caption:madeMenu,
                           contextInfo: {
     mentionedJid: [m.sender],
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
       newsletterJid: '120363321386877609@newsletter',
-      newsletterName: '𝐊𝐄𝐑𝐌 𝐌𝐃 𝐕𝟏',
+      newsletterName: '𝐘𝐀𝐍𝐑𝐀 𝐌𝐃',
       serverMessageId: 999
     }
   }
