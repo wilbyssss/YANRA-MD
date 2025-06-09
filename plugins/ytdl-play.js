@@ -3,8 +3,8 @@ const { cmd } = require('../command');
 const yts = require('yt-search');
 
 cmd({
-    pattern: "yt2",
-    alias: ["play2", "music"],
+    pattern: "song",
+    alias: ["music"],
     react: "🎵",
     desc: "Download audio from YouTube",
     category: "download",
@@ -29,7 +29,7 @@ cmd({
             title = search.videos[0].title;
         }
 
-        await reply("⏳ Downloading audio...");
+        await reply("*_⏳Downloading audio..._*");
 
         // Use API to get audio
         const apiUrl = `https://api.davidcyriltech.my.id/download/ytmp3?url=${encodeURIComponent(videoUrl)}`;
