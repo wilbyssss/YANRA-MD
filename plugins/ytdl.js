@@ -11,4 +11,126 @@ YT: KermHackTools
 Github: Kgtech-cmr
 */
 
-const _0x2374b3=_0x71ee;(function(_0x2232ab,_0x2ba93b){const _0xa950=_0x71ee,_0x3e7a0f=_0x2232ab();while(!![]){try{const _0x42102c=-parseInt(_0xa950(0x8f))/0x1*(parseInt(_0xa950(0x9d))/0x2)+parseInt(_0xa950(0x9a))/0x3*(-parseInt(_0xa950(0x96))/0x4)+-parseInt(_0xa950(0x95))/0x5+parseInt(_0xa950(0x89))/0x6+-parseInt(_0xa950(0x7d))/0x7+parseInt(_0xa950(0x93))/0x8+parseInt(_0xa950(0x8e))/0x9*(parseInt(_0xa950(0x88))/0xa);if(_0x42102c===_0x2ba93b)break;else _0x3e7a0f['push'](_0x3e7a0f['shift']());}catch(_0x4df27a){_0x3e7a0f['push'](_0x3e7a0f['shift']());}}}(_0x2470,0x61cd2));function _0x71ee(_0x546057,_0x22f629){const _0x2470a1=_0x2470();return _0x71ee=function(_0x71eeac,_0x276ba7){_0x71eeac=_0x71eeac-0x7c;let _0x18e034=_0x2470a1[_0x71eeac];return _0x18e034;},_0x71ee(_0x546057,_0x22f629);}const {cmd}=require(_0x2374b3(0x81)),yts=require(_0x2374b3(0x91)),axios=require(_0x2374b3(0x94));function _0x2470(){const _0x2c3ef5=['axios','1579165KDvVgs','470476AUqPxj','title','youtube.com','sendMessage','3YYBTzr','length','downloadUrl','53506dQYgHi','youtu.be','No\x20results\x20found\x20for\x20your\x20query.','success','includes','url','3522218fPLCHu','data','🎵\x20*Title:*\x20','\x0a🔗\x20*Link:*\x20','../command','videos','Search\x20and\x20download\x20audio\x20from\x20YouTube','result','media','*𝐏ℓєα𝐬֟፝є\x20𝐏ʀ๏νιɖє\x20𝐀\x20𝐒๏ƞ͛g\x20𝐍αмє..*','song','10HVHupW','2252946cKeKex','Failed\x20to\x20fetch\x20the\x20audio.\x20Try\x20again\x20later.','get','*_🎐\x20Your\x20song\x20is\x20downloading..._*','An\x20error\x20occurred\x20while\x20processing\x20your\x20request.','11185947CoDYZu','11irLYfZ','music','yt-search','Error\x20in\x20play\x20command:','105032QNkzFZ'];_0x2470=function(){return _0x2c3ef5;};return _0x2470();}cmd({'pattern':_0x2374b3(0x90),'alias':['audio',_0x2374b3(0x87)],'desc':_0x2374b3(0x83),'category':_0x2374b3(0x85),'react':'🎧','filename':__filename},async(_0xa18e2c,_0x49d86c,_0x1e4e46,{from:_0x4d491b,args:_0x2d3bb8,q:_0x352364,reply:_0x4312c3})=>{const _0x82d721=_0x2374b3;try{if(!_0x352364)return _0x4312c3(_0x82d721(0x86));let _0xa206d8=_0x352364;if(!_0x352364[_0x82d721(0xa1)](_0x82d721(0x98))&&!_0x352364[_0x82d721(0xa1)](_0x82d721(0x9e))){_0x4312c3(_0x82d721(0x8c));const _0x81ecdd=await yts(_0x352364);if(!_0x81ecdd[_0x82d721(0x82)][_0x82d721(0x9b)])return _0x4312c3(_0x82d721(0x9f));_0xa206d8=_0x81ecdd[_0x82d721(0x82)][0x0][_0x82d721(0x7c)];}const _0x46596a='https://apis.davidcyriltech.my.id/youtube/mp3?url='+_0xa206d8,_0x47a77e=await axios[_0x82d721(0x8b)](_0x46596a);if(!_0x47a77e['data']||!_0x47a77e[_0x82d721(0x7e)][_0x82d721(0xa0)]||!_0x47a77e[_0x82d721(0x7e)][_0x82d721(0x84)][_0x82d721(0x9c)])return _0x4312c3(_0x82d721(0x8a));await _0xa18e2c[_0x82d721(0x99)](_0x4d491b,{'audio':{'url':_0x47a77e['data'][_0x82d721(0x84)][_0x82d721(0x9c)]},'mimetype':'audio/mpeg','ptt':![],'caption':_0x82d721(0x7f)+_0x47a77e[_0x82d721(0x7e)][_0x82d721(0x84)][_0x82d721(0x97)]+_0x82d721(0x80)+_0xa206d8},{'quoted':_0x49d86c});}catch(_0x4fe12f){console['error'](_0x82d721(0x92),_0x4fe12f),_0x4312c3(_0x82d721(0x8d));}});
+
+const config = require('../config');
+const { cmd } = require('../command');
+const { ytsearch, ytmp3, ytmp4 } = require('@dark-yasiya/yt-dl.js');
+
+cmd({
+  pattern: 'play',
+  alias: ['yta', 'audio'],
+  react: '🎶',
+  desc: 'Download Youtube song',
+  category: 'main',
+  use: '.song < Yt url or Name >',
+  filename: __filename
+}, async (client, msg, text, { from, prefix, quoted, q, reply }) => {
+  try {
+    if (!q) return await reply("*𝐏ℓєαʂє 𝐏ɼ๏νιɖє 𝐀 Yʈ 𝐔ɼℓ ๏ɼ 𝐒๏ƞ͛g Ναмє..*");
+
+    const results = await ytsearch(q);
+    if (results.results.length < 1) return reply("No results found!");
+
+    let video = results.results[0];
+    let downloadUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(video.url)}`;
+
+    const response = await fetch(downloadUrl);
+    const json = await response.json();
+
+    if (json.status !== 200 || !json.result || !json.result.download_url) {
+      return reply("Failed to fetch the audio. Please try again later.");
+    }
+
+    let caption = `╔═══〔 *𝐘𝐀𝐍𝐑𝐀 𝐌𝐃* 〕═══❒
+║╭───────────────◆  
+║│ *𝐘𝐀𝐍𝐑𝐀 𝐌Ɗ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆*
+║╰───────────────◆
+╚══════════════════❒
+╔══════════════════❒
+║ ⿻ *ᴛɪᴛʟᴇ:*  ${video.title}
+║ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  ${video.timestamp}
+║ ⿻ *ᴠɪᴇᴡs:*  ${video.views}
+║ ⿻ *ᴀᴜᴛʜᴏʀ:*  ${video.author.name}
+║ ⿻ *ʟɪɴᴋ:*  ${video.url}
+╚══════════════════❒
+*ғꪮʀ ʏꪮꪊ ғꪮʀ ᴀʟʟ ꪮғ ᴀꜱ 🍉*`;
+
+    await client.sendMessage(from, {
+      image: { url: json.result.thumbnail },
+      caption
+    }, { quoted });
+
+    await client.sendMessage(from, {
+      audio: { url: json.result.download_url },
+      mimetype: 'audio/mpeg'
+    }, { quoted });
+  } catch (e) {
+    console.log(e);
+    reply("An error occurred. Please try again later.");
+  }
+});
+
+/*
+
+cmd({
+  pattern: 'mp4',
+  alias: ['ytv', 'video'],
+  react: '🎥',
+  desc: 'Download Youtube song',
+  category: 'main',
+  use: '.song < Yt url or Name >',
+  filename: __filename
+}, async (client, msg, text, { from, prefix, quoted, q, reply }) => {
+  try {
+    if (!q) return await reply("*𝐏ℓєαʂє 𝐏ɼ๏νιɖє 𝐀 Yʈ 𝐔ɼℓ ๏ɼ 𝐕ιɖє๏ Ναмє..*");
+
+    const results = await ytsearch(q);
+    if (results.results.length < 1) return reply("No results found!");
+
+    let video = results.results[0];
+    let downloadUrl = `https://apis.davidcyriltech.my.id/download/ytmp4?url=${encodeURIComponent(video.url)}`;
+
+    const response = await fetch(downloadUrl);
+    const json = await response.json();
+
+    if (json.status !== 200 || !json.result || !json.result.downloadUrl) {
+      return reply("Failed to fetch the video. Please try again later.");
+    }
+
+    let caption = `╔═══〔 *𝐊𝐄𝐑𝐌 𝐌𝐃 𝐕𝟏* 〕═══❒
+║╭───────────────◆  
+║│ *❍ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*
+║╰───────────────◆
+╚══════════════════❒
+╔══════════════════❒
+║ ⿻ *ᴛɪᴛʟᴇ:*  ${video.title}
+║ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  ${video.timestamp}
+║ ⿻ *ᴠɪᴇᴡs:*  ${video.views}
+║ ⿻ *ᴀᴜᴛʜᴏʀ:*  ${video.author.name}
+║ ⿻ *ʟɪɴᴋ:*  ${video.url}
+╚══════════════════❒
+*ғꪮʀ ʏꪮꪊ ғꪮʀ ᴀʟʟ ꪮғ ᴀꜱ 🍉*`;
+
+    await client.sendMessage(from, {
+      image: { url: json.result.thumbnail || '' },
+      caption
+    }, { quoted });
+
+    await client.sendMessage(from, {
+      video: { url: json.result.downloadUrl },
+      mimetype: 'video/mp4'
+    }, { quoted });
+
+    await client.sendMessage(from, {
+      document: { url: json.result.downloadUrl },
+      mimetype: 'video/mp4',
+      fileName: json.result.title + '.mp4',
+      caption: `*${video.title} > *© 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐊𝐞𝐫𝐦 𝐦𝐝🎐*`
+    }, { quoted });
+  } catch (e) {
+    console.log(e);
+    reply("An error occurred. Please try again later.");
+  }
+});
+
+*/
