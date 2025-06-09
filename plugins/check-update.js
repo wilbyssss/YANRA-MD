@@ -17,7 +17,7 @@ cmd({
 }) => {
   try {
     // Read local version data
-    const localVersionPath = path.join(__dirname, '../data/version.json');
+    const localVersionPath = path.join(__dirname, '../DATABASE/version.json');
     let localVersion = 'Unknown';
     let changelog = 'No changelog available.';
     if (fs.existsSync(localVersionPath)) {
