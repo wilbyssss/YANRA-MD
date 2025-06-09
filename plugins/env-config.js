@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-//           KHAN-MD  
+//           YANRA-MD  
 //---------------------------------------------------------------------------
 //  ⚠️ DO NOT MODIFY THIS FILE ⚠️  
 //---------------------------------------------------------------------------
@@ -103,7 +103,7 @@ cmd({
 });
 
 cmd({
-    pattern: "auto-typing",
+    pattern: "autotyping",
     description: "Enable or disable auto-typing feature.",
     category: "settings",
     filename: __filename
@@ -204,7 +204,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 //--------------------------------------------
 cmd({
     pattern: "auto-seen",
-    alias: ["autostatusview"],
+    alias: ["autoviewstatus"],
     desc: "Enable or disable auto-viewing of statuses",
     category: "settings",
     filename: __filename
@@ -283,7 +283,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 //--------------------------------------------
 cmd({
     pattern: "anti-bad",
-    alias: ["antibadword"],
+    alias: ["antibad", "antibads"],
     desc: "enable or disable antibad.",
     category: "settings",
     filename: __filename
@@ -308,7 +308,7 @@ async (conn, mek, m, { from, args, isCreator, reply }) => {
 //--------------------------------------------
 cmd({
     pattern: "auto-sticker",
-    alias: ["autosticker"],
+    alias: ["autosticker", "autostickers"],
     desc: "enable or disable auto-sticker.",
     category: "settings",
     filename: __filename
